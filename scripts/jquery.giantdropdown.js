@@ -32,9 +32,9 @@
       $('.giantdropdown').hide();
       if(isVisible){
         $ul.hide(); 
-        $(document).unbind('click');
+        $(document).unbind('click.giantDropdown');
       }else{
-        $(document).click(function(){
+        $(document).bind('click.giantDropdown',function(){
             $ul.hide();
         });
         scrollToFirstSelected($ul);
