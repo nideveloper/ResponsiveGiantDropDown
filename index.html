@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>Giant Dropdown Demo</title>
+  <script type="text/javascript" src="./scripts/jquery.js"></script>
+  <script type="text/javascript" src="./scripts/jquery.giantdropdown.js"></script>
+  <script type="text/javascript">
+      // <![CDATA[
+      $(function () {
+          $("select").giantDropdown();
+
+          $('#sports').change(function () {
+              alert('jQuery Change Event Fired');
+          });
+      });
+      // ]]>
+  </script>
+  <link rel="stylesheet" href="./styles/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="./styles/bootstrap-responsive.min.css" type="text/css" />
+  <link rel="stylesheet" href="./styles/giantdropdown.css" type="text/css" />
+  <link rel="stylesheet" href="./styles/styles.css" type="text/css" />
+  <style>
+    .doubleHeight{
+        height:  50px;
+    }
+  </style>
+ </head>
+ <body> 
+     <div class="container">
+        <header>
+            <h2>
+                Giant Dropdown Select Box
+            </h2>
+        </header>
+        <p>
+            The purpose of this plugin is to allow dropdowns of any height whilst still being responsive in terms of width. This is useful when you have options that are extremely long.
+        </p>
+        <section>
+            <header>
+                Examples of Usage
+            </header>
+            <div class="row-fluid">
+                <div class="span6">
+                    <label for="bigDropDownTest">Double Height Select - <small>Classes and styles on the native select carry across</small></label>
+                    <select id="bigDropDownTest" class="doubleHeight">
+                       <option value="">---</option>
+                       <option value="1">A short one</option>
+                       <option value="2">One that is a little longer</option>
+                       <option value="3">One that is a little bit longer than that</option>
+                       <option value="4">An element that is really quite long and takes up a lot of display room on the screen</option>
+                       <option value="5">An element that is so long and takes up so much room on the screen that you basically have no way of displaying the element without wrapping the text within it</option>
+                       <option value="6">Another one that isn't quite as long</option>
+                       <option value="7">One that is really very long but doesn't wrap around the screen</option>
+                       <option value="8">Short</option>
+                       <option value="9">Entheusiastic!</option>
+                       <option value="10">The last one</option>
+                    </select>
+                </div>
+                <div class="span6">
+                    <label for="planeType">Single Select with Option Groups</label>
+                    <select id="planeType">
+                       <option value="" selected="selected">---</option>
+                       <optgroup label="Piper">
+	                       <option value="">Cub</option>
+	                       <option value="">Warrior</option>
+	                       <option value="">Archer</option>
+	                       <option value="">Saratoga</option>
+                       </optgroup>
+                       <optgroup label="Cessna">
+	                       <option value="">172</option>
+	                       <option value="">172 RG</option>
+	                       <option value="">182</option>
+                       </optgroup>
+                       <optgroup label="Aerobatic">
+   	                       <option value="">Super Decathlon</option>
+	                       <option value="">T-6</option>
+	                    </optgroup>
+                    </select>
+                </div>
+            </div>
+             <div class="row-fluid">
+                <div class="span6">  
+                    <label for="sports">Custom Class - <small>Note that this dropdown also shows the onchange event firing</small></label>
+                    <select id="sports" onchange="alert('Native OnChange Event Fired')" class="thumbtacks">
+                       <option value="" selected="selected" style="font-weight: bold; color:  blue;">---</option>
+                       <optgroup label="Piper">
+	                       <option value="">Cub</option>
+	                       <option value="">Warrior</option>
+	                       <option value="">Archer</option>
+	                       <option value="">Saratoga</option>
+                       </optgroup>
+                       <optgroup label="Cessna">
+	                       <option value="">172</option>
+	                       <option value="">172 RG</option>
+	                       <option value="">182</option>
+                       </optgroup>
+                       <optgroup label="Aerobatic">
+   	                       <option value="">Super Decathlon</option>
+	                       <option value="">T-6</option>
+	                    </optgroup>
+                    </select>
+                </div>
+                <div class="span6">  
+                    <label for="sports">Disabled Dropdown</label>
+                    <select id="disabled" onchange="alert('Native OnChange Event Fired')" disabled="disabled" class="thumbtacks">
+                       <option value="" selected="selected" style="font-weight: bold; color:  blue;">---</option>
+   	                   <option value="">First Option</option>
+	                   <option value="">Second Option</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <section>
+            <header>
+                Changing the values in the select
+            </header>
+            <p>
+                        This is really simple. If you change the values in the original select element, just call $('#IDofSelect').giantDropdown() again on the select and it will destroy the original and redraw with the new values. The same applies to enabling and disabling the original select.
+            </p>
+            <pre>
+//create a normal select
+&lt;select id="exampleDropdown">
+    &lt;option value="">---&lt;/option>
+    &lt;option value="1">First Option&lt;/option>
+&lt;/select>
+
+//This will initialize the dropdown
+$('#exampleDropdown').giantDropdown();
+
+//Change the value selected in the select by js, then redraw the giantDropdown
+$('#exampleDropdown').val('1');
+$('#exampleDropdown').giantDropdown();
+            </pre>
+        </section>
+     </div>
+ </body>
+</html>
