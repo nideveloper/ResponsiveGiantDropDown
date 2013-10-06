@@ -214,7 +214,7 @@
                 }
 
                 //Only apply to selects with an id
-                if ($(this).prop('id') === undefined) {
+                if (($(this).prop('id') === undefined) || ($(this).prop('id') === "")) {
                     alert('The select needs to have an ID');
                     return;
                 }
