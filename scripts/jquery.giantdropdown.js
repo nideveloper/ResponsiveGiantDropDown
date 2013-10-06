@@ -32,10 +32,10 @@
       $('.giantdropdown').hide();
       if(isVisible){
         $ul.hide(); 
-        $(document).unbind('click.giantDropdown');
       }else{
-        $(document).bind('click.giantDropdown',function(){
+        $(document).bind('click.giantDropdown',function(e){
             $ul.hide();
+            $(this).unbind(e);
         });
         scrollToFirstSelected($ul);
         $ul.show();
