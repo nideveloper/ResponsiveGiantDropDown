@@ -30,9 +30,7 @@
   function dropdownClick($ul, e){
       var isVisible = $ul.is(':visible');
       $('.giantdropdown').hide();
-      if(isVisible){
-        $ul.hide(); 
-      }else{
+      if(!isVisible){
         $(document).bind('click.giantDropdown',function(e){
             $ul.hide();
             $(this).unbind(e);
