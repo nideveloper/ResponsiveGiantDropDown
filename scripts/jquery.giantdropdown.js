@@ -23,7 +23,7 @@
 
     function scrollToFirstSelected($ul) {
         var $first,
-        initialPosition;
+            initialPosition;
 
         $first = $ul.find("li.selected:first");
 
@@ -106,8 +106,8 @@
     function createListOptions($dropdown, $textArea, $ul) {
         $.each($dropdown.find('option, optgroup'), function () {
             var option,
-            $option,
-            $li;
+                $option,
+                $li;
 
             option = this;
             $option = $(option);
@@ -205,7 +205,7 @@
         init: function () {
             return this.each(function () {
                 var disabled = false,
-            $dropdown = $(this);
+                    $dropdown = $(this);
 
                 // not a dropdown
                 if (this.tagName !== "SELECT") {
